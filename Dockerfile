@@ -9,4 +9,5 @@ COPY ./requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 # Copying the codebase, near the end since this won't get cached as it changes
 # frequently, prior steps should get cached, optimizing container build time
-COPY ./api /code/api
+COPY . /code
+CMD python __main__.py
